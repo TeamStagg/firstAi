@@ -1,0 +1,3 @@
+This will use a mutation ai to solve a simple platforming game
+this is my first ai, dont yell at me
+rad
