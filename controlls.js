@@ -30,9 +30,16 @@ class Player {
     right = false
     jump = false
 
+    onPlatform = -1
+
     checkGrounded(){
         for(let i in platforms){
-            if((platforms[i][0] < this.x + 10 && platforms[i][0] + 100 > this.x && platforms[i][1] + 10 >= this.y + 10 && platforms[i][1] - 2 < this.y + 10) || this.y >= 490){
+            if(this.y >= 490){
+                this.onPlatform = -1
+                return true
+            }
+            if(platforms[i][0] < this.x + 10 && platforms[i][0] + 100 > this.x && platforms[i][1] + 10 >= this.y + 10 && platforms[i][1] - 2 < this.y + 10){
+                this.onPlatform = i
                 return true
             }
             else{
@@ -99,10 +106,15 @@ function update(){
     ctx.fillRect(player.x, player.y, 10, 10)
 
     if(!player.checkGrounded()){
-        player.vy ++
+        if(player.vy < 10){
+            player.vy ++
+        }
     }
     else{
         player.vy = 0
+        if(player.onPlatform >= 0){
+            player.y = platforms[player.onPlatform][1] - 10
+        }
     }
 
     if(player.left){
