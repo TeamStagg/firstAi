@@ -32,3 +32,256 @@ and onother guy sees a platform to the right and goes left,
 the latter is a dumbass and will get weeded out
 
 you get it
+
+WAIT
+
+HOW DO I DECIDE THEIR tendencies
+
+I dont want to hold their hand and be like, platform is left you want to left
+cuz thats like 2 lines of code
+
+and thats hand holding
+
+WTF
+
+should i like
+
+...
+
+ummm
+
+BIG BRAIN
+
+ok say they have their x and y, and the platfroms x and y
+
+in the form of this [x,y], [x,y]
+
+which is allready borderline hand holding
+butttt
+
+they get a tendencies, weight and margin of error for each item in the array to item in the array
+that made no fu**ing sense
+
+to reduce hand holding it would just be x,y,x1,y1
+
+and there would be a tendencie and weight for each one to the other that results in an output
+
+that made no sense
+lemmethink
+
+ok x->y is not importants, so the weight would eventually be 0
+
+but x-> x1 is important, so the weight would be 1
+
+but noooo
+
+WHAT THE FUUUUUUu
+hwo do i decide hte ;dsfalkj;lkjfdsa;lkjfdsa;fdsajfdshgdgds
+
+ok lets say its the first gen and there is bing bong 1, 2, and 3
+
+nooo its so complecated
+
+ok
+
+
+so
+
+
+
+bing bong 1 sees that 
+x is 0, and x1 is 100
+
+could this all 
+
+no
+
+do i need something that makes functions
+
+and if loops and shit
+
+bro i started thinking about this 12 minutes ago, its 420 rn lets document my decision making process
+ok
+
+so i need a way that decides a correlation between ever variable
+
+should i just subtract them
+so
+
+if i subtracted 100 and 0 i would get 100
+
+and then because that is positive they would go right
+
+but then it would just walk off everything
+
+imma review some code
+
+its 424
+
+BRO IVE BEEN LOOKING OVER CODE BULLET CODE FOR 5 MINUTES WHAT THE FU** IS THIS
+
+ok lets think about what a neural network is
+
+its just
+...
+...
+...    > do shit
+...
+...
+
+you knwo
+
+so the first row is a bunch of inputs
+
+x
+y
+
+HWO DO I TURN OFF PRESS ENTER FOR AUTO CORRECT
+HOLY SHIT IF FIXED IT AND WILL NEVER BE HAPPIER
+
+anywahay
+
+inputs are
+
+x
+y
+x1
+y1
+
+and the thing sees these numbers and doesnt do or know anything
+
+x
+y     .    
+x1   
+y1
+
+
+WE HAKJVE A BRIAN BABAYYYYYYYYYYYY
+
+ok
+
+that is a thought
+
+that comapirs 2 diffeerent thoughts
+
+my idea is that that thought is an operation
+
+so it could be adding, subtracting, >, <
+
+hell YEA
+
+so now that we can think we need to dynamiclY thingk
+
+should we have everything start with 1 layer of random nodes
+
+whcih is like
+
+1,2
+1,3
+1,4
+2,3
+2,4
+3,4
+
+6 thoughts
+
+thats more than me
+
+so this mf can compare 4 nodes 6 different ways
+
+and we need this to have an output
+
+
+but wait why does it compare anything, or do anything, or if it subtracts 2 numbers why does it do anything
+
+ok maybe we need 2 different types of nodes
+
+a blue node will be a thought node which for example could subtract 2 nodes,
+the other is a red node, or a decision node, whic compares thought nodes to get something
+
+these red nodes all have an output
+
+so
+if ummm
+
+
+hu
+
+i have 2 different kinds of brain cells
+
+OK
+
+
+so
+
+lets say we have a bing bon that think
+
+that
+
+
+OK
+
+we need anoth9r red node,
+
+ok
+
+a margin of error equal sine
+
+so like
+
+its = to the paltform with a certain threshold,
+
+obviously this cant be set
+bc thats handholding
+
+sososoosososososoosososososoosososososoosos
+
+its random
+
+ok
+
+we have a few nodes
+
+
+x
+y
+x1
+y1
+
+x,y > red node greater than > false, weight 5 left
+x,x1 > blue node subtract > 100
+x,y1 > blue node add > 800 or smthing
+y,x1 > red node = margin 10 > false, weight 5 stop left
+blah blah blah
+
+
+you get it
+
+each blue node returns a value for the next layer to parse
+
+each red node has a weight, and an action for false or true
+
+after the brain is done thingking we have 
+5 left
+5 stop left
+=
+10 in all
+random number 1-10
+
+it gives 5
+
+we do first option
+
+it gives 7
+
+we do second option
+
+we have random brain with random shit to do shit
+
+the weight, action, margin of error, and different comparison values change each mutation
+
+ITS 450 I DID THIS FOR MOST OF AN HOUR
+
+AAAAAAAAAAAAAAAAAAAAa
+
+i think it will work tho
