@@ -1,3 +1,34 @@
 This will use a mutation ai to solve a simple platforming game
 this is my first ai, dont yell at me
 rad
+
+how this brain gonna work
+
+there are movesYEA
+
+move example, 
+move left for an amount of time
+move right for an amout of time
+insert jump
+YEA
+
+sooo ig for now just execute 20 moves than see who did the best
+
+buthow decide moves
+
+idfk let me think
+
+ummmmmmm
+
+i dont want this to be a b*tch array of moves ai, and i dont want to use a package
+
+all right here me out, last time i tried this bing bong didnt have eyes, butttt
+what if i show him the next platform x and y, in the middle of the platform
+and each guy had certain tendencies and margins of error to different situations
+
+for example when one guy sees the platfrom is right, they go right, with a margin of error of 20 %,
+and onother guy sees a platform to the right and goes left,
+
+the latter is a dumbass and will get weeded out
+
+you get it
