@@ -91,6 +91,9 @@ function printCanvas() {
     ctx.fillStyle = "rgb(100,50,50)"
     ctx.fillRect(platforms[0][0], platforms[0][1], platforms[0][2], 10)
     for (let i in platforms) {
+        if(i == platforms.length - 1){
+            ctx.fillStyle = "rgb(0,255,0)"
+        }
         ctx.fillRect(platforms[i][0], platforms[i][1], platforms[i][2], 10)
     }
     // platformPrint += "[" + platforms[platforms.length-1] + "]"
@@ -124,6 +127,7 @@ function update(){
         player.x += 5
     }
     if(player.checkGrounded() && player.jump){
+        player.jump = false
         player.vy = -10
     }
 
