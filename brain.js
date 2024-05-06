@@ -49,7 +49,6 @@ class Brain {
         for (let i = 0; i < this.network[1].length; i++) {
             let compare1 = this.network[this.network[1][i].compareNodes[0][0]][this.network[1][i].compareNodes[0][1]]
             let compare2 = this.network[this.network[1][i].compareNodes[1][0]][this.network[1][i].compareNodes[1][1]]
-            console.log(this.network[1][i].Node(compare1, compare2))
             if (this.network[1][i].Node(compare1, compare2)) {
                 outputPercent.push({ output: this.network[1][i].output, weight: this.network[1][i].weight })
             }
@@ -59,33 +58,29 @@ class Brain {
             return null
         }
 
-        console.log(outputPercent)
         let totalWeight = 0
         for (let i in outputPercent) {
             totalWeight += outputPercent[i].weight
         }
 
         let chosenWeight = Math.random() * totalWeight
-        console.log(chosenWeight)
+
 
         for (let i = 0; i < outputPercent.length; i++) {
             if (outputPercent[i].weight > chosenWeight) {
-                console.log("in")
                 console.log(outputPercent[i].output)
                 return outputPercent[i].output
             }
             else {
                 chosenWeight -= outputPercent[i].weight
-                console.log("LOWERED TOTAL WEIGH")
-                console.log(chosenWeight)
             }
         }
     }
+    mutate(){
+        let red = new RedNode(Math.random(), [[0, Math.floor(Math.random() * 4)], [0, Math.floor(Math.random() * 4)]], Math.floor(Math.random() * 3), outputs[Math.floor(Math.random() * 6)])
+        let brain1 = this
+        brain1.network[1][Math.floor(Math.random() * brain.network[1].length)] = red
+        console.log(this)
+        console.log(brain1)
+    }
 }
-
-let brain = new Brain([90, 500, 20, 2000])
-brain.networkSetup()
-console.log(brain.network)
-
-brain.newRow()
-brain.calculateNext()
