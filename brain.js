@@ -35,8 +35,8 @@ class Brain {
 
         let outputs = ["stopLeft", "Left", "stopRight", "Right", "Jump", "stopJump"]
 
-        for (let i = 0; i < 6; i++) {
-            let red = new RedNode(Math.random(), [[0, Math.floor(Math.random() * 4)], [0, Math.floor(Math.random() * 4)]], Math.floor(Math.random() * 3), outputs[Math.floor(Math.random() * 6)])
+        for (let i = 0; i < 8; i++) {
+            let red = new RedNode(Math.random(), [[0, Math.floor(Math.random() * this.network[0].length)], [0, Math.floor(Math.random() * this.network[0].length)]], Math.floor(Math.random() * 3), outputs[Math.floor(Math.random() * 6)])
             nextSet.push(red)
         }
 
@@ -54,7 +54,7 @@ class Brain {
             }
         }
 
-        if(outputPercent.length == 0){
+        if (outputPercent.length == 0) {
             return null
         }
 
@@ -68,7 +68,6 @@ class Brain {
 
         for (let i = 0; i < outputPercent.length; i++) {
             if (outputPercent[i].weight > chosenWeight) {
-                console.log(outputPercent[i].output)
                 return outputPercent[i].output
             }
             else {
@@ -76,11 +75,12 @@ class Brain {
             }
         }
     }
-    mutate(){
-        let red = new RedNode(Math.random(), [[0, Math.floor(Math.random() * 4)], [0, Math.floor(Math.random() * 4)]], Math.floor(Math.random() * 3), outputs[Math.floor(Math.random() * 6)])
-        let brain1 = this
-        brain1.network[1][Math.floor(Math.random() * brain.network[1].length)] = red
-        console.log(this)
-        console.log(brain1)
-    }
+    // mutate() {
+    //     let outputs = ["stopLeft", "Left", "stopRight", "Right", "Jump", "stopJump"]
+    //     let brain1 = this
+    //     let red = new RedNode(Math.random(), [[0, Math.floor(Math.random() * this.network[0].length)], [0, Math.floor(Math.random() * this.network[0].length)]], Math.floor(Math.random() * 3), outputs[Math.floor(Math.random() * 6)])
+    //     brain1.network[1][Math.floor(Math.random() * this.network[1].length)] = red
+    //     console.log(brain1)
+    //     return brain1
+    // }
 }

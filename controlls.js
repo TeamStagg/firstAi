@@ -3,8 +3,6 @@ let ctx
 let player
 let aiOn = 1
 
-let population = []
-
 let platforms = [
     [106, 486, 100, 10],
     [210, 458, 100, 10],
@@ -46,6 +44,11 @@ class Player {
             }
             if (platforms[i][0] < this.x + 10 && platforms[i][0] + 100 > this.x && platforms[i][1] + 10 >= this.y + 10 && platforms[i][1] - 2 < this.y + 10) {
                 this.onPlatform = i
+
+                if(this.onPlatform > this.maxPlatform){
+                    this.maxPlatform = this.onPlatform
+                }
+
                 return true
             }
             else {
@@ -105,12 +108,29 @@ function printCanvas() {
     // platformPrint += "[" + platforms[platforms.length-1] + "]"
 }
 
-function update(brain) {
+function update(populationPool) {
+    let brain = populationPool.population[populationPool.scoredPopulation.length]
     timer++
     if(timer == 500){
-        population.push({brain : brain, score: player.onPlatform})
+        populationPool.scoredPopulation.push({brain : brain, score: populationPool.score(parseInt(player.onPlatform), parseInt(player.maxPlatform))})
         timer = 0
-        start()
+
+        if(populationPool.scoredPopulation.length == populationPool.population.length){
+            let modelBrain = populationPool.bestBrain().brain
+            console.log(modelBrain, "MODEL BRAIN")
+            populationPool.population = []
+            populationPool.scoredPopulation = []
+
+            try{
+                populationPool.fillPopulation(5, true, modelBrain)
+            }
+            catch(err){
+                populationPool.fillPopulation(5, false, null)
+            }
+        }
+
+        console.log(populationPool)
+        start(populationPool)
         return 0
     }
 
@@ -173,11 +193,18 @@ function update(brain) {
     player.y += player.vy
 
     setTimeout(() => {
-        update(brain)
-    }, 30);
+        update(populationPool)
+    }, 10);
 }
 
-function start() {
+function startLoad(){
+    let populationPool = new Population()
+    populationPool.fillPopulation(5, false, null)
+    start(populationPool)
+}
+
+
+function start(populationPool) {
     player = new Player(0, 490)
     let canvas = document.getElementById("canvas")
 
@@ -186,15 +213,5 @@ function start() {
     ctx = canvas.getContext('2d')
     ctx.fillStyle = "rgb(100,50,50)"
 
-
-
-    let brain = new Brain([90, 500, 20, 2000])
-    brain.networkSetup()
-    console.log(brain.network)
-
-    brain.newRow()
-
-    brain.mutate()
-
-    // update(brain)
+    update(populationPool)
 }
