@@ -290,3 +290,22 @@ i think it will work tho
 IM BACK
 
 THIS GONNA GO HARD
+
+
+OK so there gonna be a brain class, and node class
+
+the brain is gonna have the input, middle, and output
+and it is going to connect the nodes
+
+the red node class
+is going to compare 2 things, >, <, =
+
+the blue node class
+is going to add or subtract 2 thingies
+
+idea
+
+every red should imeddietly feed into the output without another layer
+
+what to do if a brian has no red nodes,
+darwinism
