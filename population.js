@@ -7,7 +7,6 @@ class Population {
         this.scoredPopulation = []
         for (let i = 0; i < popAmount; i++) {
             if (!mutateBool) {
-                console.log("REFUCKED BRAIN AND SHIT")
                 let brain = new Brain([0,0,0,0])
                 brain.networkSetup()
                 brain.newRow()
