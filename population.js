@@ -3,8 +3,11 @@ class Population {
     population = []
 
     fillPopulation(popAmount, mutateBool, modelBrain) {
+        this.population = []
+        this.scoredPopulation = []
         for (let i = 0; i < popAmount; i++) {
             if (!mutateBool) {
+                console.log("REFUCKED BRAIN AND SHIT")
                 let brain = new Brain([0,0,0,0])
                 brain.networkSetup()
                 brain.newRow()
@@ -13,9 +16,13 @@ class Population {
             }
             else{
                 let brain = modelBrain
-                brain = this.mutate(modelBrain)
-                
-                this.population.push(brain)
+                if(this.population.length == 0){
+                    this.population.push(brain)
+                }
+                else{
+                    brain = this.mutate(modelBrain)
+                    this.population.push(brain)
+                }
             }
         }
     }
@@ -37,8 +44,20 @@ class Population {
     mutate(modelBrain) {
         let outputs = ["stopLeft", "Left", "stopRight", "Right", "Jump", "stopJump"]
         let brain1 = modelBrain
-        let red = new RedNode(Math.random(), [[0, Math.floor(Math.random() * modelBrain.network[0].length)], [0, Math.floor(Math.random() * modelBrain.network[0].length)]], Math.floor(Math.random() * 3), outputs[Math.floor(Math.random() * 6)])
-        brain1.network[1][Math.floor(Math.random() * modelBrain.network[1].length)] = red
+        
+        let rand1 = Math.random()
+        let rand2 = Math.floor(Math.random() * modelBrain.network[0].length)
+        let rand3 = Math.floor(Math.random() * modelBrain.network[0].length)
+        let rand4 = Math.floor(Math.random() * 3)
+        let rand5 = outputs[Math.floor(Math.random() * 6)]
+
+        console.log(rand1, rand2, rand3, rand4, rand5)
+
+        let red = new RedNode(rand1, [[0, rand2], [0, rand3]], rand4, rand5)
+
+        console.log(red)
+
+        brain1.network[1][this.population.length % brain1.network[0].length] = red
         return brain1
     }
 }

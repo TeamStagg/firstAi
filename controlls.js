@@ -112,6 +112,7 @@ function update(populationPool) {
     let brain = populationPool.population[populationPool.scoredPopulation.length]
     timer++
     if(timer == 500){
+        console.log(populationPool)
         populationPool.scoredPopulation.push({brain : brain, score: populationPool.score(parseInt(player.onPlatform), parseInt(player.maxPlatform))})
         timer = 0
 
@@ -129,7 +130,6 @@ function update(populationPool) {
             }
         }
 
-        console.log(populationPool)
         start(populationPool)
         return 0
     }
@@ -195,6 +195,7 @@ function update(populationPool) {
     setTimeout(() => {
         update(populationPool)
     }, 10);
+    
 }
 
 function startLoad(){
